@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --main-width :55%;
+            --margin-top: 190px;
+        }
+        
         * {
             padding: 0px;
             margin: 0px;
@@ -12,36 +17,43 @@
  
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: pink;
+            /* background-image: url(begron.jpg); */
         }
  
-        .circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 25px;
-            background-color: greenyellow;
+        .logo {
+            width: 88%;
+            display: flex;
+            background: url(logo.jpg) no-repeat center center/cover;
+            height: 75px;
+            width: 75px;
+            border-radius: 37px;
         }
- 
+
+        section.page {
+            width: 90%;
+            height: 75vh;
+            /* background-color: pink; */
+            margin: 0px auto;
+        }
+
         nav {
-            position: relative;
+            position: sticky;
+            top: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0px 20px;
-            height: 80px;
-            background-image: linear-gradient(#150c3f, #32157a);
+            width: 100%;
+            height: 100px;
+            background-color: rgb(207, 102, 120);
         }
 
-        ul {
-            position: absolute;
-            right: 0px;
-            top: 80px;
-            background-color: #2d2069;
-            height: calc(100vh - 80px);
-            width: 300px;
-            display: none;
-            flex-direction: column;
-            gap: 60px;
-            padding-top: 50px;
+        nav li {
+            width: 12%;
+            display: flex;
+            /* justify-content: space-between; */
+            /* align-items: center; */
         }
  
         li {
@@ -52,80 +64,223 @@
  
         li a {
             text-decoration: none;
+            font-weight: bold;
             color: white;
-            font-size: 25px;
-            /* font-weight: bold; */
+            font-size: 24px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
- 
-        .menu-icon {
-            display: block;
-            width: 50px;
-            height: 50px;
-            /* border: 1px black solid; */
+
+        li a:hover {
+            color: rgb(162, 29, 51);
         }
  
-        .menu-icon span {
-            display: block;
-            width: 40px;
-            height: 5px;
-            background-color: black;
-            margin: 8px auto;
-        }  
- 
         ul.show {
-        display: flex;
+            display: flex;
         }
             
         ul li {
-        margin: 0px;
-        padding: 0px;
+            margin: 0px;
+            padding: 0px;
         }
- 
+
+        .page.one {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left1 {
+            width: 45%;
+            background: url(IMG_8624.jpg) no-repeat center center/cover;
+            height: 400px;
+            width: 365px;
+            margin: 80px;
+        }
+
+        .right1 {
+            width: var(--main-width);
+            margin-top: 150px;
+            margin-right: 79px;
+        }
+
+        .right1 h1 {
+            font-size: 50px;
+            font-style: italic;
+        }
+
+        .right1 p {
+            font-size: 20px;
+        }
+
+        .page.two {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left2 {
+            width: var(--main-width);
+            margin-top: 170px;
+            margin-left: 79px;
+        }
+
+        .right2 {
+            width: 45%;
+            background: url(IMG_8617.jpg) no-repeat center center/cover;
+            height: 400px;
+            width: 365px;
+            margin: 80px;
+        }
+
+        .left2 h1 {
+            font-size: 50px;
+            font-style: italic;
+        }
+
+        .left2 p {
+            font-size: 20px;
+        }
+
+        .page.tri {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left3 {
+            background: url(IMG_8621.jpg) no-repeat center center/cover;
+            height: 420px;
+            width: 385px;
+            margin: 100px 150px;
+        }
+
+        .right3 {
+            width: var(--main-width);
+            margin-top: var(--margin-top);
+            margin-right: 79px;
+        }
+
+        .right3 h1 {
+            font-size: 50px;
+            font-style: italic;
+        }
+
+        .right3 p {
+            font-size: 20px;
+        }
+
+        .page.four {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left4 {
+            width: var(--main-width);
+            margin-top: var(--margin-top);
+            margin-left: 79px;
+        }
+
+        .right4 {
+            width: 45%;
+            background: url(IMG_8618.jpg) no-repeat center center/cover;
+            height: 400px;
+            width: 365px;
+            margin: 80px;
+        }
+
+        .left4 h1 {
+            font-size: 50px;
+            font-style: italic;
+        }
+
+        .left4 p {
+            font-size: 20px;
+        }
+
+        .running-text-box {
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            height: 30px;
+            width: 300vw;
+            background-color: whitesmoke;
+            display: flex;
+            align-items: center;
+        }
+
+        .running-text-box > p {
+            /* background-color: white; */
+            color: black;
+            padding: 0px 5px;
+            font-size: 14pt;
+            position: relative;
+            animation: runningtext 10s infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes runningtext {
+            from {
+                left: 0px;
+            }
+            to {
+                left: -1000px;
+            }
+        }
 
     </style>
-    <title>My Website</title>
+    <title>Toko</title>
 </head>
 <body>
     <header>
         <nav>
-            <div class="circle"></div>
-            <ul id="menu">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Profile</a>
-                </li>
-            </ul>
- 
-            <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <script>
-                let showInfo;
-                if (!localStorage.getItem("show"))
-                    localStorage.setItem("show", false);
-                showInfo = JSON.parse(localStorage.getItem("show"));
- 
-                if (showInfo){
-                    document.getElementById("menu").classList.toggle('show');
-                } 
- 
-                document.querySelector(".menu-icon").addEventListener('click', () => {
-                    document.getElementById("menu").classList.toggle('show');
-                    showInfo = !showInfo;
-                    localStorage.setItem("show", showInfo);
-                })  
-            </script>
+            <div class="logo"></div>
+            <li>
+                <a href="Question.html">Question?</a>
+            </li>
+            <li>
+                <a href="ContactUs.html">Contact Us</a>
+            </li>
+            <li>
+                <a href="#">Profile</a>
+            </li>
         </nav>
+
+            <section class="page one">
+                <div class="left1"></div>
+                <section class="right1">
+                    <h1>The Chocolate Cookie</h1>
+                    <p>Our signature best seller menu is well made with browned butter & couverture dark chocolate that melts in every single bite u take. Wanginya yang enak banget dan rasanya yang gurihh, this cookie will be your mood booster!! along with crunchy layer, a soft base and melt of chocolate in every bite of it will definitely make your day.</p>
+                    <p>ps : disaranin untuk makannya pas lagi hangat dan dicelupin ke susu dingin, itu kombinasi yg pas bangett menurut aku atau mungkin bisa dicelupin dengan kopi biar rasa manisnya bisa diimbangin dengan kopi yang pahit. </p>
+                </section>
+            </section>
+
+            <section class="page two">
+                <section class="left2">
+                    <h1>Lowtus Cookie</h1>
+                    <p>Cookies dengan topping marshmellow yang strechy dan lotus yang renyah, rasanya ga semanis chocolate chips karena 3/4 coklatnya diganti pakai lotus biscuit, jadi bakal ada rasa crunchy pas dimakan. WAJIBB BANGETTT sebelum makan cookies ini harus di potek dulu untuk ngeliat marshmellow yang strechy!!</p>
+                </section>
+                <div class="right2"></div>
+            </section>
+
+            <section class="page tri">
+                <div class="left3"></div>
+                <section class="right3">
+                    <h1>Red Velvet cookie</h1>
+                    <p>Redvelvet and creemcheese is a match made in heaven❤️. Therefore we provide our red velvet cookies with a creem cheese filling inside them. Cookies ini beneran cocok banget untuk yang ga terlalu suka manis karena ada perpaduan guroh dari cream cheese filling di tengahnya.</p>
+                </section>
+            </section>
+
+            <section class="page four">
+                <section class="left4">
+                    <h1>Cookie cake</h1>
+                    <p>Buat kalian nih yang mungkin bosen sama kue ulang tahun yang gitu gitu ajaa, cookie cake ini cocok banget buat jadi pilihan kue ultah kalian.</p>
+                    <P>Dengan banyak pilihan rasa yang bisa kalian pilih dan juga size yang beragamm, atau additional yang mau kalian pilih biar kue kalian makin cantikk😍</P>
+                </section>
+                <div class="right4"></div>
+            </section>
+
+            <div class="running-text-box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, suscipit nesciunt, similique quisquam dicta culpa labore eos dignissimos eaque possimus fugit nisi doloremque atque saepe voluptatum amet ipsam, error velit ad delectus nam. Fuga cumque blanditiis tenetur exercitationem fugit? Et consequuntur quas dignissimos, minus incidunt earum mollitia voluptates veritatis ad?</p>
+            </div>
     </header>
 </body>
 </html>
