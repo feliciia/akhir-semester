@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: pink;
+            /* background-image: url(begron.jpg); */
+        }
+ 
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 20px;
+            width: 100%;
+            height: 100px;
+            background-color: rgb(207, 102, 120);
+        }
+
+        .logo {
+            width: 88%;
+            /* display: flex; */
+            background: url(logo.jpg) no-repeat center center/cover;
+            height: 75px;
+            width: 75px;
+            border-radius: 37px;
+        }
+
+
+        nav li {
+            width: 12%;
+            display: flex;
+            /* justify-content: space-between; */
+            /* align-items: center; */
+        }
+ 
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: 30px;
+        }
+ 
+        li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li a:hover {
+            color: rgb(162, 29, 51);
+        }
+ 
+        ul.show {
+            display: flex;
+        }
+            
+        ul li {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .span {
+            width: 350px;
+            height: 2px;
+            background-color: black;
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+
+        .page {
+            width: 90%;
+            height: 70vh;
+            margin: 80px;
+            font-size: 20px;
+            display: flex;
+        }
+
+        .left {
+            width: 600px;
+        }
+
+        .left h3 {
+            font-size: 30px;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .link img {
+            width: 40px;
+            height: 40px;
+            border-radius: 15px;
+        }
+
+        .carousel {
+            width: 400px;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+            background: gray;
+            margin: 20px 130px;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100vh;
+            display: none;
+            position: absolute;
+            animation: slide 3s ease infinite;
+        }
+
+        .carousel .carousel-slide:nth-child(1){
+            background: url(b1.PNG) no-repeat center center/cover;
+        }
+        .carousel .carousel-slide:nth-child(2){
+            background: url(b2.PNG) no-repeat center center/cover;
+        }
+        .carousel .carousel-slide:nth-child(3){
+            background: url(b3.PNG) no-repeat center center/cover;
+        }
+        .carousel .carousel-slide:nth-child(4){
+            background: url(b4.PNG) no-repeat center center/cover;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"></div>
+        <li>
+            <a href="Question.html">Question?</a>
+        </li>
+        <li>
+            <a href="#">Contact Us</a>
+        </li>
+        <li>
+            <a href="index.html">Profile</a>
+        </li>
+    </nav>
+    <section class="page">
+        <section class="left">
+        <h3>Contact us</h4>
+            <div class="span"></div>
+            <div class="link">
+                <a href="https://api.whatsapp.com/send?phone=6282282287329"><img src="logoWA.jfif">+6282282287329</a>
+            </div>
+            <p>
+                @sugardiary.plg 
+                <a href="https://www.instagram.com/sugardiary.plg/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">ℹ️</a>
+            </p>
+        </section>
+
+        <div class="carousel">
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll(".carousel-slide");
+            let currentSlideIndex = 0;
+
+            function showSlide(index) {
+                slides[currentSlideIndex].style.display = "none";
+                currentSlideIndex = (index + slides.length) % slides.length;
+                slides[currentSlideIndex].style.display = "block";
+            }
+
+            function nextSlide() {
+                showSlide(currentSlideIndex + 1);
+            }
+
+            showSlide(currentSlideIndex);
+
+            setInterval(nextSlide, 1500);
+        });
+    </script>
+</body>
+</html>
